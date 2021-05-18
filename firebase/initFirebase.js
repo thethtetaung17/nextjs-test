@@ -14,20 +14,21 @@ const clientCredentials = {
     messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
     appId: process.env.NEXT_PUBLIC_APP_ID
 }
-
-export default function initFirebase() {
-    // console.log(clientCredentials);
-    // console.log(firebase.app.length)
-    // if (!firebase.app.length) {
-        firebase.initializeApp(clientCredentials);
+const appName = process.env.NEXT_PUBLIC_APP_NAME;
+const initFirebase = () => {
+    const apps = firebase.apps.map(a => a.name);
+    if (!apps.includes(appName)) {
+        firebase.initializeApp(clientCredentials, appName);
         if (typeof window !== 'undefined') {
             if ('measurementId' in clientCredentials) {
                 firebase.analytics();
                 firebase.performance();
             }
         }
-        console.log('Firebase have been initialized!')
-    // } else {
-    //     console.log('Firebase initialization failed!')
-    // }
+    } else {
+        firebase.app(appName);
+    }
+    console.log('Firebase have been initialized!')
 }
+
+export default initFirebase;
