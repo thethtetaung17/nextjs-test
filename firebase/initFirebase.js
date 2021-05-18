@@ -28,7 +28,7 @@ const initFirebase = () => {
     } else {
         firebase.app(appName);
     }
-    console.log('Firebase have been initialized!')
+    console.log('Firebase have been initialized!');
 }
 
 export default initFirebase;
