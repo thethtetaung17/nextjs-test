@@ -9,11 +9,11 @@ initFirebase();
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <WriteToCloudFirestore />
-      <ReadFromCloudFirestore />
-      <Counter id={'counter-sag389'} /> 
-    </div>
+    <>
+      <div>
+        <h1>Home</h1>
+      </div>
+    </>
   )
 }
 

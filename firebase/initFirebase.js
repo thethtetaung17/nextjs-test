@@ -17,17 +17,17 @@ const clientCredentials = {
 const appName = process.env.NEXT_PUBLIC_APP_NAME;
 const initFirebase = () => {
     const apps = firebase.apps.map(a => a.name);
-    if (!apps.includes(appName)) {
-        firebase.initializeApp(clientCredentials, appName);
+    console.log(apps)
+    // if (!firebase.app) {
+        console.log('Firebase is initializing...')
+        firebase.initializeApp(clientCredentials);
         if (typeof window !== 'undefined') {
             if ('measurementId' in clientCredentials) {
                 firebase.analytics();
                 firebase.performance();
             }
         }
-    } else {
-        firebase.app(appName);
-    }
+    // }
     console.log('Firebase have been initialized!');
 }
 
