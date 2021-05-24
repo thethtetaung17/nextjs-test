@@ -17,6 +17,13 @@ module.exports = {
         return config;
     },
     images: {
-        domains: [],
+        domains: [
+            'cx-devx-cdn-uploaded-images.s3.ap-southeast-1.amazonaws.com',
+            'media-exp1.licdn.com',
+            'cdn1.vectorstock.com',
+            'encrypted-tbn0.gstatic.com',
+            'i.dlpng.com',
+            'www.pngarts.com'
+        ],
     },
 };
