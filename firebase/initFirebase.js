@@ -18,7 +18,7 @@ const appName = process.env.NEXT_PUBLIC_APP_NAME;
 const initFirebase = () => {
     const apps = firebase.apps.map(a => a.name);
     console.log(apps)
-    if (!firebase.app) {
+    // if (!firebase.app) {
         console.log('Firebase is initializing...')
         firebase.initializeApp(clientCredentials);
         if (typeof window !== 'undefined') {
@@ -27,7 +27,7 @@ const initFirebase = () => {
                 firebase.performance();
             }
         }
-    }
+    // }
     console.log('Firebase have been initialized!');
 }
 
